@@ -13,6 +13,12 @@
  * 'string' from before, and there's no '\0' between them.
  */
 
+// [ s[0] ][ s[1] ][ s[2] ][ s[3] ][ s[4] ][ next_var[0] ][ next_var[1] ]...[ next_var[7] ]
+//   'h'     'e'     'l'     'l'     'o'     '\0'           'A'              '\0'
+//                                           ↑
+//                                     strcpy wrote \0 here!
+
+
 #include <stdio.h>
 #include <string.h>
 
